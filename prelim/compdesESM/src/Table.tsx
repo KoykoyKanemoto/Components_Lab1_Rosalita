@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import axios from "axios";
 
 interface Employee {
     id: number;
@@ -7,7 +8,7 @@ interface Employee {
     salary: number;
 }
 
-const EmployeeItem: React.FC<{ todo: Employee; onToggle: (id: number) => void }> = ({ todo, onToggle }) => {
+const EmployeeItem: React.FC<{ EmployeeProps }> = ({ }) => {
     return (
         <li 
             // key={todo.id} 
@@ -18,3 +19,43 @@ const EmployeeItem: React.FC<{ todo: Employee; onToggle: (id: number) => void }>
         </li>
     );
 };
+
+const EmployeeInput: React.FC<{ onAdd: (text: string) => void }> = ({ ...}) => {
+    const [input, setInput] = useState<string>("");
+
+    const handleSubmit = () => {
+        // if (!input.trim()) return;
+        // onAdd(input);
+        // setInput("");
+    };
+
+    return (
+        <div>
+            <input 
+                type="text" 
+                placeholder="Add new Employee here" 
+                value={input} 
+                onChange={(e) => setInput(e.target.value)}
+            />
+            <button onClick={handleSubmit}>Add</button>
+        </div>
+    );
+};
+
+export default EmployeeItem
+
+
+// Entry Level
+// ------------------------------------------------
+// Name          | Role          |  Salary        |
+// ------------------------------------------------
+// JP            | Dev           | 30,000         |
+// Joshua        | Dev           | 40,000         |
+
+
+// Senior
+// ------------------------------------------------
+// Name          | Role          |  Salary        |
+// ------------------------------------------------
+// Wendzzz       | CEO           | 90,000         |
+// Sheena        | Subordinate   | 150,000        |
