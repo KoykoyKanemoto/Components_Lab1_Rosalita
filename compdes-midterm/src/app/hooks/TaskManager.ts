@@ -43,8 +43,8 @@ export const addTodo = async (task: string, deadline: string | null) => {
   const { data, error } = await supabase
     .from("todos")
     .insert([{ task, deadline, is_done: false }])
-    .select() // This is the key part — tells Supabase to return the inserted row
-    .single(); // Use .single() if you're only inserting one
+    .select()
+    .single();
 
   if (error) {
     console.error("Insert error:", error.message);
@@ -53,5 +53,6 @@ export const addTodo = async (task: string, deadline: string | null) => {
 
   return data;
 };
+
 
 

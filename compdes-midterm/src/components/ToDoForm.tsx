@@ -19,7 +19,7 @@ export const ToDoForm: React.FC<ToDoFormProps> = ({ onAdd }) => {
 
     try {
       const newTodo = await addTodo(taskText, taskType === "timed" ? deadline : null);
-      if (newTodo && newTodo.length > 0) {
+      if (newTodo) {
         onAdd(newTodo);
       }
       setTaskText("");
