@@ -61,12 +61,12 @@ export const ToDoForm: React.FC<ToDoFormProps> = ({ onAdd }) => {
 
       <div className="flex flex-row justify-center space-x-3">
         {taskType === "timed" && (
-        <input 
-        type="date"
-        onChange={(e) => setDeadline(e.target.value)}
-        className="grow-[20vw] p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#f9da0d]"
-      />
-      )}
+          <input 
+          type="date"
+          onChange={(e) => setDeadline(e.target.value)}
+          className="grow-[20vw] p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#f9da0d]"
+          />
+        )}
       </div>
     </form>
   );
