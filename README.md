@@ -1,5 +1,5 @@
 ## Getting Started
-(this applies to the midterm project only)
+#### (this applies to the midterm project only)
 First, install dependencies
 
 ```bash
