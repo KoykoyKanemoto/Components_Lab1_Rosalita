@@ -58,7 +58,7 @@ const handleToggleComplete = async (id: string, is_done: boolean) => {
   }
 
   return (
-    <div>
+    <div className="w-[40%]">
         <h2 className="text-center text-2xl mb-5">Enter a Task</h2>
            <ToDoForm onAdd={addTodoToList} />
         <div className="text-center mt-5">

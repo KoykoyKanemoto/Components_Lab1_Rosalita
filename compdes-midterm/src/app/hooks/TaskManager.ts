@@ -39,7 +39,7 @@ export const handleComplete = async (id: string, is_done: boolean): Promise<void
   }
 };
 
-export const addTodo = async (task: string, deadline: string) => {
+export const addTodo = async (task: string, deadline: string | null) => {
   const { data, error } = await supabase
     .from("todos")
     .insert([{ task, deadline, is_done: false }])
