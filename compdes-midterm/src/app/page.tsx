@@ -1,9 +1,12 @@
+import React from "react";
+import { ToDoList } from "@/components/ToDoList";
 
 export default function Home() {
   return (
-    <div className="scroll-smooth text-2xl font-bold">
-      hello, world!
-    </div>
+    <main className="scroll-smooth h-screen flex flex-col items-center pt-12 bg-black">
+      <h1 className="text-3xl mb-2 font-bold">WiseWay Todo List</h1>
+      <ToDoList/>
+    </main>
   );
 }
 
