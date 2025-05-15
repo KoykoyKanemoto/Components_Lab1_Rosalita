@@ -4,7 +4,7 @@ import { Todos } from "@/types/todos.types";
 export const fetchTodos = async (): Promise<Todos[]> => {
   const { data, error } = await supabase
     .from("todos")
-    .select()
+    .select("*")
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -39,10 +39,12 @@ export const handleComplete = async (id: string, is_done: boolean): Promise<void
   }
 };
 
-export const addTodo = async (task: string) => {
+export const addTodo = async (task: string, deadline: string) => {
   const { data, error } = await supabase
     .from("todos")
-    .insert([{ task, is_done: false }]);
+    .insert([{ task, deadline, is_done: false }])
+    .select() // This is the key part — tells Supabase to return the inserted row
+    .single(); // Use .single() if you're only inserting one
 
   if (error) {
     console.error("Insert error:", error.message);
@@ -51,6 +53,5 @@ export const addTodo = async (task: string) => {
 
   return data;
 };
-
 
 
